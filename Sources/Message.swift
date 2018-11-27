@@ -36,11 +36,8 @@ public class Message {
     public var status: String? {
         return payload["status"] as? String
     }
-    
-    //----------------------------------------------------------------------
-    // MARK: - Internal
-    //----------------------------------------------------------------------
-    init(ref: String = "",
+
+    public init(ref: String = "",
          topic: String = "",
          event: String = "",
          payload: Payload = [:],
@@ -51,7 +48,10 @@ public class Message {
         self.payload = payload
         self.joinRef = joinRef
     }
-    
+
+    //----------------------------------------------------------------------
+    // MARK: - Internal
+    //----------------------------------------------------------------------
     
     init?(data: Data) {
         do {
